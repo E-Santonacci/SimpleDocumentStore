@@ -1,0 +1,26 @@
+{
+  "name": "simpledocumentstore",
+  "version": "0.1.0",
+  "description": "a simple noSql JSON documents database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E-Santonacci/SimpleDocumentStore.git"
+  },
+  "keywords": [
+    "noSql",
+    "database",
+    "javascript",
+    "json",
+    "document"
+  ],
+  "author": "Éric Santonacci <eric.santonacci@abhaya.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/E-Santonacci/SimpleDocumentStore/issues"
+  },
+  "homepage": "https://github.com/E-Santonacci/SimpleDocumentStore#readme"
+}
