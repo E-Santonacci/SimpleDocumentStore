@@ -21,7 +21,8 @@ lineReader.on('line', function (line) {
     const document = JSON.parse(line);
     if (document.postcode === '38000') {
         streetCount++;
-        store.append({
+        // add document in memory
+        store.add({
             id: document.id,
             type: document.type,
             name: document.name,
@@ -29,16 +30,16 @@ lineReader.on('line', function (line) {
             city: document.city,
             lat: document.lat,
             long: document.long,
-        }, function (err) {
-            if (err) {
-                console.log(err);
-            }
-        })
+        });
     }
 });
 
 lineReader.on('close', function () {
     const t1 = performance.now();
+    // save to db file
+    store.save(function(err){
+        console.log(err);
+    })
     console.log('trouvées: ' + streetCount);
     console.log('total: ' + lineCount);
 
