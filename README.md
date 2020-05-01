@@ -11,9 +11,10 @@ I'm often working on projects which don't store a big amount of data. I wanted t
 * no concurrent access, in particular in writes/updates.
 * no primary key (yet?).
 * no indexes.
-* noSql, no structure in db, you can store any javscript object, it's up to you to add 'type' field if you need collection.
+* noSql, no structure in db, you can store any javascript object, it's up to you to add 'type' field if you need collection.
 * search by scalar field.
 * somehow human readable as file is a stack of JSON. Separator is UNICODE Record Separator ('\u241E').
+* using unicode record separator lets you use 'new line' in string data field.
 * you can use text editor to search and update (if you are an adventurer :-) ).
 * 1 constructor and a few methods: get/search, add, save, append.
 
@@ -50,7 +51,7 @@ If the file does not exist, it is created.
 Get/search for documents.
 
 ```javascript
-store.get(parameters, callback);
+store.get(parameters, function(err, documents));
 ```
 
 **parameters**
@@ -61,7 +62,7 @@ it is an object with 3 properties
 
 
 **callback** (err, documents)
-the callback returns an array of document corresponding to the search
+the callback returns an array of documents corresponding to the search
 
 ### add
 Add a document in memory but does not save it to db file. Use it to add several documents in a loop before save all in one go.
@@ -80,7 +81,7 @@ store.save(funtion(err){
 
 
 ### append
-Add a document at end of database asynchronously. Care, using 'append' in a loop will probably cause a 'file lock'.
+Add a document at end of database asynchronously. Care, using 'append' in a loop will probably cause a 'file lock' error.
 ```javascript
 store.append(object, function(err){
     console.log(err);
