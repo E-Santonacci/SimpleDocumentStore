@@ -1,6 +1,6 @@
 {
-  "name": "simpledocumentstore",
-  "version": "0.1.0",
+  "name": "simple-document-store",
+  "version": "0.1.1",
   "description": "a simple noSql JSON documents database",
   "main": "index.js",
   "scripts": {
