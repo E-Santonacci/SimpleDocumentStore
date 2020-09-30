@@ -93,6 +93,14 @@ the object to add.
 **callback**(err)
 err is not null if something went wrong.
 
+### save
+Save whole documents (which are in memory) to disk asynchronouly.
+```javascript
+store.save(object, function(err){
+    console.log(err);
+});
+```
+
 ### update
 It is NOT a method. you can directly update results of a search and modify documents returned, then save.
 

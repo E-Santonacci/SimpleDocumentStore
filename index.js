@@ -36,7 +36,7 @@ class Store {
      *               a scalar value.
      * @param fieldname {string} 
      * @param value     {scalar} a scalar value
-     * @return the document as an object
+     * @return the documents as an array
      */
     get(query, callback) {
 
