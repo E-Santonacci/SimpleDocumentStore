@@ -1,5 +1,5 @@
 # Simple Document Store
-a noSql simple JSON documents database for projects in developement.
+a noSql simple JSON documents database for projects **in developement**.
 
 ## Why
 I'm often working on projects which don't store a big amount of data during dev. I wanted to have a small store easy to use and to implement.
